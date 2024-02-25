@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Connexion à Khaliss</p>
+
+      <form action="/se_connecter" method="post">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="input" class="form-control" placeholder="Login" name="username">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password" name="password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+          </div>
+          <!-- /.col -->
+          <div class="row">
+            {% if messages %}
+              <div class="col-12">
+                {% for message in messages %}
+                  {% if message.tags == 'error' %}
+                    <div class="alert alert-danger" style="margin-top:10px;">{{ message }}</div>
+                  {%endif%}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</body>
+</html>
