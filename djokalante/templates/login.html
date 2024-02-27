@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Khaliss</title>
+  <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
 </head>
 <body>
 <div class="card">
@@ -12,7 +14,7 @@
       <form action="/se_connecter" method="post">
         {% csrf_token %}
         <div class="input-group mb-3">
-          <input type="input" class="form-control" placeholder="Login" name="username">
+          <input type="input" class="form-control" placeholder="Identfiant" name="username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -20,7 +22,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input type="password" class="form-control" placeholder="Mot de passe" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -49,5 +51,7 @@
     </div>
     <!-- /.login-card-body -->
   </div>
+
+<script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 </body>
 </html>

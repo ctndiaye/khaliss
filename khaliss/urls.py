@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.page_de_connexion, name="page_de_connexion"),
     path('home', views.home, name="home"),
     path('se_connecter', views.se_connecter, name="se_connecter"),
+    path('se_deconnecter', views.se_deconnecter, name="se_deconnecter"),
 ]
